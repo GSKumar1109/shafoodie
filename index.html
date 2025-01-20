@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pickle Business Website">
+    <title>Delicious Pickles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Delicious Pickles</h1>
+    <p>Your one-stop shop for homemade, flavorful pickles!</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#cart">Cart</a>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+    <h2>Welcome to Delicious Pickles!</h2>
+    <p>Discover our wide range of homemade pickles, made with fresh, natural ingredients. Your taste buds will thank you!</p>
+</section>
+
+<!-- About Us Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are a family-owned pickle business, dedicated to crafting the finest pickles using traditional recipes passed down through generations. Our pickles are made with the highest quality ingredients, ensuring every jar is packed with flavor.</p>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="product-list">
+        <!-- Example Product 1 -->
+        <div class="product-item" data-product="Spicy Mango Pickle">
+            <img src="pickle1.jpg" alt="Spicy Mango Pickle">
+            <h3>Spicy Mango Pickle</h3>
+            <p>A tangy and spicy delight for your taste buds!</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity('Spicy Mango Pickle', 'decrease')">-</button>
+                <span id="Spicy Mango Pickle-quantity">0</span>
+                <button onclick="changeQuantity('Spicy Mango Pickle', 'increase')">+</button>
+                <select id="Spicy Mango Pickle-size" onchange="changeQuantitySize('Spicy Mango Pickle')">
+                    <option value="250gm">250gm</option>
+                    <option value="500gm">500gm</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Spicy Mango Pickle')">Add to Cart</button>
+        </div>
+
+        <!-- Example Product 2 -->
+        <div class="product-item" data-product="Sweet Lime Pickle">
+            <img src="pickle2.jpg" alt="Sweet Lime Pickle">
+            <h3>Sweet Lime Pickle</h3>
+            <p>A sweet and tangy treat with a burst of flavor.</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity('Sweet Lime Pickle', 'decrease')">-</button>
+                <span id="Sweet Lime Pickle-quantity">0</span>
+                <button onclick="changeQuantity('Sweet Lime Pickle', 'increase')">+</button>
+                <select id="Sweet Lime Pickle-size" onchange="changeQuantitySize('Sweet Lime Pickle')">
+                    <option value="250gm">250gm</option>
+                    <option value="500gm">500gm</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Sweet Lime Pickle')">Add to Cart</button>
+        </div>
+
+        <!-- Example Product 3 -->
+        <div class="product-item" data-product="Garlic Pickle">
+            <img src="pickle3.jpg" alt="Garlic Pickle">
+            <h3>Garlic Pickle</h3>
+            <p>A savory pickle for garlic lovers!</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity('Garlic Pickle', 'decrease')">-</button>
+                <span id="Garlic Pickle-quantity">0</span>
+                <button onclick="changeQuantity('Garlic Pickle', 'increase')">+</button>
+                <select id="Garlic Pickle-size" onchange="changeQuantitySize('Garlic Pickle')">
+                    <option value="250gm">250gm</option>
+                    <option value="500gm">500gm</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Garlic Pickle')">Add to Cart</button>
+        </div>
+
+        <!-- Example Product 4 -->
+        <div class="product-item" data-product="Tomato Pickle">
+            <img src="pickle4.jpg" alt="Tomato Pickle">
+            <h3>Tomato Pickle</h3>
+            <p>A tangy and savory combination for all tomato lovers!</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity('Tomato Pickle', 'decrease')">-</button>
+                <span id="Tomato Pickle-quantity">0</span>
+                <button onclick="changeQuantity('Tomato Pickle', 'increase')">+</button>
+                <select id="Tomato Pickle-size" onchange="changeQuantitySize('Tomato Pickle')">
+                    <option value="250gm">250gm</option>
+                    <option value="500gm">500gm</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Tomato Pickle')">Add to Cart</button>
+        </div>
+
+        <!-- Example Product 5 -->
+        <div class="product-item" data-product="Mixed Vegetable Pickle">
+            <img src="pickle5.jpg" alt="Mixed Vegetable Pickle">
+            <h3>Mixed Vegetable Pickle</h3>
+            <p>A hearty and flavorful vegetable mix for a spicy kick!</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity('Mixed Vegetable Pickle', 'decrease')">-</button>
+                <span id="Mixed Vegetable Pickle-quantity">0</span>
+                <button onclick="changeQuantity('Mixed Vegetable Pickle', 'increase')">+</button>
+                <select id="Mixed Vegetable Pickle-size" onchange="changeQuantitySize('Mixed Vegetable Pickle')">
+                    <option value="250gm">250gm</option>
+                    <option value="500gm">500gm</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Mixed Vegetable Pickle')">Add to Cart</button>
+        </div>
+
+        <!-- Repeat similar structure for remaining products -->
+    </div>
+</section>
+
+<!-- Cart Section -->
+<section id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-details">
+        <p>No items in your cart yet.</p>
+    </div>
+    <a class="whatsapp-btn" href="#" id="whatsapp-link">Proceed to WhatsApp</a>
+</section>
+
+<!-- Recipes Section -->
+<section id="recipes">
+    <h2>Recipes & Serving Suggestions</h2>
+    <p>Here are some ideas on how you can enjoy our pickles:</p>
+    <div class="recipe-list">
+        <ul>
+            <li>Spicy Mango Pickle with grilled chicken</li>
+            <li>Sweet Lime Pickle on a toasted sandwich</li>
+            <li>Garlic Pickle with your favorite curry</li>
+            <li>Mixed pickle with naan bread</li>
+            <li>Carrot and cucumber pickle as a salad topping</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or want to place an order, feel free to reach out to us!</p>
+    <div class="contact-details">
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Email: contact@deliciouspickles.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Delicious Pickles - All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
